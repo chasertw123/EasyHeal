@@ -1,0 +1,17 @@
+name: EasyHeal
+main: us.crownnetwork.Main
+version: 1.4.1
+
+commands:
+  heal:
+    description: Heal yourself or another player.
+    default: op
+  healall:
+    description: Heal everyone.
+    default: op
+	
+permissions:
+  easyheal.heal:
+      description: Allows you to use the heal command.
+  easyheal.healall:
+      description: Allows you to use the healall command.

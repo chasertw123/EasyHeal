@@ -1,7 +1,5 @@
 package us.crownnetwork.commands;
 
-import java.util.logging.Level;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -27,7 +25,7 @@ public class CmdHeal implements CommandExecutor {
 			if (args.length == 0) {
 				
 				if (!(sender instanceof Player))
-					plugin.sendConsole(Level.INFO, "You must be a player in order to heal yourself!");
+					plugin.sendConsole("You must be a player in order to heal yourself!");
 				
 				else {
 					Player p = (Player) sender;
@@ -46,7 +44,7 @@ public class CmdHeal implements CommandExecutor {
 					if (other != null)
 						other.setHealth(other.getMaxHealth());
 				
-					else plugin.sendConsole(Level.INFO, "That player could not be found!");
+					else plugin.sendConsole("That player could not be found!");
 				
 				else {
 					Player p = (Player) sender;
@@ -64,7 +62,7 @@ public class CmdHeal implements CommandExecutor {
 				
 			} else {
 				if (!(sender instanceof Player)) 
-					plugin.sendConsole(Level.INFO, "Invaild arguments!");
+					plugin.sendConsole("Invaild arguments!");
 				
 				else {
 					Player p = (Player) sender;

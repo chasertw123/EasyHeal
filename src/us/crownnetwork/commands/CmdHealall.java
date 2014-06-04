@@ -1,7 +1,5 @@
 package us.crownnetwork.commands;
 
-import java.util.logging.Level;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -43,7 +41,7 @@ public class CmdHealall implements CommandExecutor {
 			if (args.length >= 1) {
 				
 				if (!(sender instanceof Player))
-					plugin.sendConsole(Level.INFO, "Invalid arguments!");
+					plugin.sendConsole("Invalid arguments!");
 				
 				else {
 					Player p = (Player) sender;

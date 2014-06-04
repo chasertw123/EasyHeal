@@ -1,7 +1,5 @@
 package us.crownnetwork;
 
-import java.util.logging.Level;
-
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,6 +12,7 @@ public class Main extends JavaPlugin {
 	private CommandHandler ch = new CommandHandler(this);
 	
 	public void onEnable() {
+		
 		/** Configuration Management **/
 		//TODO - Add message managment
 		
@@ -21,12 +20,13 @@ public class Main extends JavaPlugin {
 		ch.init();
 		
 		/** Enable Message **/
-		this.sendConsole(Level.INFO, "[EasyHeal] EasyHeal V" + this.getDescription().getVersion() + " has been enabled!");
+		this.sendConsole("[EasyHeal] EasyHeal V" + this.getDescription().getVersion() + " has been enabled!");
 	}
 	
 	public void onDisable() {
+		
 		/** Disable Message **/
-		this.sendConsole(Level.INFO, "[EasyHeal] EasyHeal V" + this.getDescription().getVersion() + " has been disabled!");
+		this.sendConsole("[EasyHeal] EasyHeal V" + this.getDescription().getVersion() + " has been disabled!");
 	}
 	
 	/************************************************
@@ -36,14 +36,14 @@ public class Main extends JavaPlugin {
 	 ************************************************/
 	
 	String prefix = ChatColor.WHITE + "[" + ChatColor.AQUA + "" 
-			+ ChatColor.ITALIC + "CrownPvP" + ChatColor.WHITE + "] "; 
+			+ ChatColor.ITALIC + "EasyHeal" + ChatColor.WHITE + "] "; 
 	
 	public void sendMessage(Player p, String message) {
 		p.sendMessage(prefix + message);
 	}
 	
-	public void sendConsole(Level level, String message) {
-		this.getLogger().log(level, message);
+	public void sendConsole(String message) {
+		this.getLogger().info(message);
 	}
 
 	public void noPermission(Player p) {
